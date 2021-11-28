@@ -1,0 +1,22 @@
+{
+    "shared": {
+        "login": {
+            "username": "User Name",
+            "password": "Password",
+            "verifyPassword": "Verify Password",
+            "heading": "Portfolio Manager",
+            "message": "Login",
+            "profile": "Profile"
+        },
+        "error-messages" :{
+            "required": "This field is required.",
+            "matchFields": "Both Field value should be same.",
+            "passwordCheck": "Password and Verify Password should be same."
+        },
+        "register": {
+            "noRegister": "Not Registered",
+            "message": "Register",
+            "alreadyRegister": "Already Registered"
+        }
+    }
+}

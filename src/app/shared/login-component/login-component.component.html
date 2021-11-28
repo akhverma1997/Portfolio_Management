@@ -1,0 +1,45 @@
+<div class="container-fluid">
+    <div class="portfolio">
+        <div class="portfolio-heading">{{ 'shared.login.heading' | translate }}<a class="profile" routerLink="/portfolio/public">{{ 'shared.login.profile' | translate }}</a></div>
+        <div class="portfolio-login">
+            <form [formGroup]="loginForm">
+                <div class="username-login">
+                    <div class="username-label portfolio-text">{{ 'shared.login.username' | translate}}</div>
+                    <div class="username-input">
+                        <input formControlName="username" name="formControlName" type="text" class="input-custom" autocomplete="off"
+                        [attr.invalid]="loginForm.controls.username.invalid && loginForm.controls.username.touched"/>
+                        <div class="error-block">
+                            <app-error-block [controlField]="'username'" [errorForm]="loginForm" [invalidValue]="{required: 'shared.error-messages.required'}"></app-error-block>
+                        </div>
+                    </div>
+                </div>
+                <div class="password-login">
+                    <div class="password-label portfolio-text">{{ 'shared.login.password' | translate}}</div>
+                    <div class="password-input">
+                        <input formControlName="password" name="formControlName" type="password" class="input-custom" autocomplete="off"
+                        [attr.invalid]="loginForm.controls.password.invalid && loginForm.controls.password.touched"/>
+                        <div class="error-block">
+                            <app-error-block [controlField]="'password'" [errorForm]="loginForm" [invalidValue]="{required: 'shared.error-messages.required'}"></app-error-block>
+                        </div>
+                    </div>
+                </div>
+                <div *ngIf="!login" class="verify-password-login">
+                    <div class="verify-password-label portfolio-text">{{ 'shared.login.verifyPassword' | translate}}</div>
+                    <div class="password-input">
+                        <input formControlName="verifyPassword" name="formControlName" type="password" class="input-custom" autocomplete="off"
+                        [attr.invalid]="(loginForm.controls.verifyPassword.invalid && loginForm.controls.verifyPassword.touched) || (loginForm.errors && loginForm.errors.differentFields && loginForm.controls.verifyPassword.touched && loginForm.controls.password.touched)"/>
+                        <div class="error-block">
+                            <app-error-block [controlField]="'verifyPassword'" [errorForm]="loginForm" [invalidValue]="{required: 'shared.error-messages.required', differentFields: 'shared.error-messages.passwordCheck'}"></app-error-block>
+                        </div>
+                    </div>
+                </div>
+                <div class="login-attempt">
+                    <button *ngIf="login" type="button" class="btn-primary button-default button-custom">{{ 'shared.login.message' | translate}}</button>
+                    <div *ngIf="login" class="portfolio-register" (click)="registerPortfolio()">{{ 'shared.register.noRegister' | translate}}?</div>
+                    <button *ngIf="!login" type="button" class="btn-primary button-default button-custom">{{ 'shared.register.message' | translate}}</button>
+                    <div *ngIf="!login" class="portfolio-register" (click)="loginPortfolio()">{{ 'shared.register.alreadyRegister' | translate}}?</div>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>
