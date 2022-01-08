@@ -6,7 +6,6 @@ import { Component } from '@angular/core';
   styleUrls: ['./public-portfolio.component.scss']
 })
 export class PublicPortfolioComponent {
-
   constructor() {}
   
 

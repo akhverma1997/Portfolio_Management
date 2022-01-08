@@ -2,6 +2,7 @@ import { CommonModule } from '@angular/common';
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 import { RouterModule } from '@angular/router';
+import { Ng2PageScrollModule } from 'ng2-page-scroll';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { PublicPortfolioComponent } from './public-portfolio/public-portfolio.component';
@@ -17,7 +18,8 @@ import { LoginModule } from './shared/login-component/login-component.module';
     CommonModule,
     AppRoutingModule,
     LoginModule,
-    RouterModule
+    RouterModule,
+    Ng2PageScrollModule
   ],
   providers: [],
   bootstrap: [AppComponent]
